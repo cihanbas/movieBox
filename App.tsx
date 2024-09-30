@@ -1,3 +1,4 @@
+import { colors } from '@assets/theme/Colors';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
@@ -12,9 +13,9 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
+    backgroundColor: colors.white,
+    flex: 1,
     justifyContent: 'center',
   },
 });
