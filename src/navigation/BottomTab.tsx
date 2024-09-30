@@ -1,9 +1,8 @@
+import { Heart, Home, Search, User } from '@assets/icons/Icons';
+import { colors } from '@assets/theme/Colors';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '@screens/Home/HomeScreen';
 import { TabParamList } from './types';
-import AntDesign from '@expo/vector-icons/AntDesign';
-import { colors } from '@assets/theme/Colors';
-import { Heart, Home, Search, User } from '@assets/icons/Icons';
 const Tab = createBottomTabNavigator<TabParamList>();
 
 export function BottomTabs() {
@@ -22,8 +21,8 @@ export function BottomTabs() {
         name="Home"
         component={HomeScreen}
         options={{
-          tabBarIcon(props) {
-            return <Home color={props.color} />;
+          tabBarIcon({ color }) {
+            return <Home color={color} />;
           },
         }}
       />
@@ -31,8 +30,8 @@ export function BottomTabs() {
         name="Search"
         component={HomeScreen}
         options={{
-          tabBarIcon(props) {
-            return <Search color={props.color} />;
+          tabBarIcon({ color }) {
+            return <Search color={color} />;
           },
         }}
       />
@@ -40,8 +39,8 @@ export function BottomTabs() {
         name="Favorites"
         component={HomeScreen}
         options={{
-          tabBarIcon(props) {
-            return <Heart color={props.color} />;
+          tabBarIcon({ color }) {
+            return <Heart color={color} />;
           },
         }}
       />
@@ -49,8 +48,8 @@ export function BottomTabs() {
         name="Profile"
         component={HomeScreen}
         options={{
-          tabBarIcon(props) {
-            return <User color={props.color} />;
+          tabBarIcon({ color }) {
+            return <User color={color} />;
           },
         }}
       />

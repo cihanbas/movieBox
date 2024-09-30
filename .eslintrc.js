@@ -10,7 +10,7 @@ module.exports = {
     'plugin:react-native/all',
     'plugin:prettier/recommended',
   ],
-
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
