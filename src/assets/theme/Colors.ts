@@ -1,11 +1,10 @@
 const colors = {
   white: '#fff',
-
-  primary: '#E13287',
-  background: '#060433',
-  card: 'rgb(255, 255, 255)',
-  text: '#fff',
-  border: 'rgb(199, 199, 204)',
+  primary: '#FF3D00',
+  background: '#131313',
+  card: '#9DB2CE',
+  text: '#9DB2CE',
+  border: '#9DB2CE',
   notification: 'rgb(255, 69, 58)',
 };
 export { colors };
