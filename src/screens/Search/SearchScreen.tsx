@@ -3,7 +3,7 @@ import NotFound from '@components/NotFound';
 import { SearchInput } from '@components/SearchInput';
 import MovieLoader from '@components/Skeleton/movie';
 import { useInfiniteQuery } from '@tanstack/react-query';
-import React, { FC, useCallback, useState } from 'react';
+import React, { FC, useCallback, useMemo, useState } from 'react';
 import { FlatList, ListRenderItem, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { IBottomCompositeScreenProps } from 'src/navigation/types';
@@ -27,7 +27,10 @@ const SearchScreen: FC<Props> = ({ navigation }) => {
     },
     initialPageParam: 1,
   });
-
+  const dataArr = useMemo(
+    () => data?.pages.map((p) => p.results).flat(),
+    [data],
+  );
   const onSearch = (q: string) => {
     setQuery(q);
   };
@@ -59,7 +62,7 @@ const SearchScreen: FC<Props> = ({ navigation }) => {
       <FlatList
         renderItem={renderItem}
         keyExtractor={(item) => `${item.id}`}
-        data={data?.pages.map((p) => p.results).flat()}
+        data={dataArr || []}
         numColumns={2}
         contentContainerStyle={styles.contentContainer}
         onEndReached={handleMore}
