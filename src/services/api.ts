@@ -7,9 +7,6 @@ const api = {
   movieDetail: (id: number) =>
     axios.get<MovieDetail>(`movie/${id}?language=en-U`),
   search: (page: number, q: string, year: string) => {
-    console.log(
-      `search/movie?include_adult=false&language=en-US&page=${page}&query=${q}${year && '&year=' + year}`,
-    );
     return axios.get<MoviePage>(
       `search/movie?include_adult=false&language=en-US&page=${page}&query=${q}${year && '&primary_release_year=' + year}`,
     );
