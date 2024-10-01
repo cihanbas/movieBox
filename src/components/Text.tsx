@@ -17,6 +17,6 @@ export default Text;
 
 const styles = StyleSheet.create({
   text: {
-    color: colors.text,
+    color: colors.white,
   },
 });

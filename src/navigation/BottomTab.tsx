@@ -1,7 +1,9 @@
-import { Heart, Home, Search, User } from '@assets/icons/Icons';
+import { Heart, Home, Search } from '@assets/icons/Icons';
 import { colors } from '@assets/theme/Colors';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import FavoritesScreen from '@screens/Favorites/FavoritesScreen';
 import HomeScreen from '@screens/Home/HomeScreen';
+import SearchScreen from '@screens/Search/SearchScreen';
 import { TabParamList } from './types';
 const Tab = createBottomTabNavigator<TabParamList>();
 
@@ -14,7 +16,9 @@ export function BottomTabs() {
           backgroundColor: colors.background,
           borderTopWidth: 0,
         },
+
         tabBarShowLabel: false,
+        tabBarInactiveTintColor: colors.card,
       }}
     >
       <Tab.Screen
@@ -28,7 +32,7 @@ export function BottomTabs() {
       />
       <Tab.Screen
         name="Search"
-        component={HomeScreen}
+        component={SearchScreen}
         options={{
           tabBarIcon({ color }) {
             return <Search color={color} />;
@@ -37,19 +41,10 @@ export function BottomTabs() {
       />
       <Tab.Screen
         name="Favorites"
-        component={HomeScreen}
+        component={FavoritesScreen}
         options={{
           tabBarIcon({ color }) {
             return <Heart color={color} />;
-          },
-        }}
-      />
-      <Tab.Screen
-        name="Profile"
-        component={HomeScreen}
-        options={{
-          tabBarIcon({ color }) {
-            return <User color={color} />;
           },
         }}
       />
