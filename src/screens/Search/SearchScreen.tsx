@@ -1,4 +1,4 @@
-import { MovieItem } from '@components/ListItem';
+import MovieItem from '@components/ListItem';
 import NotFound from '@components/NotFound';
 import { SearchInput } from '@components/SearchInput';
 import MovieLoader from '@components/Skeleton/movie';
