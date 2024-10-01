@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Svg, { SvgProps, Path } from 'react-native-svg';
+import Svg, { Path, SvgProps } from 'react-native-svg';
 const Search = (props: SvgProps) => (
   <Svg width={24} height={25} fill="none" {...props}>
     <Path
@@ -48,4 +48,5 @@ const User = (props: SvgProps) => (
     />
   </Svg>
 );
-export { Home, Search, Heart, User };
+
+export { Heart, Home, Search, User };
