@@ -14,7 +14,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import searchSlices from './features/search/searchSlices';
 import favoriteSlice from './features/favorite/favoriteSlice';
 const persistConfig = {
-  key: 'edulog',
+  key: 'moviebox',
   storage: AsyncStorage,
   blacklist: ['searchSlice'],
 };
